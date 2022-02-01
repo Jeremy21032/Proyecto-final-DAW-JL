@@ -32,7 +32,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'birthdate',
     ];
 
-
+public function hasRole(string $role)
+    {
+        return $this->role->name === $role;
+    }
 
 
     // Relación de uno a muchos
